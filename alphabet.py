@@ -1,9 +1,9 @@
 from datetime import datetime
 import random
 
-NUM_OF_TRILS = 5
-NUM_OF_ALL_CHARS = 10
-NUM_OF_ABS_CHARS = 2
+NUM_OF_TRILS = 5 #試行回数
+NUM_OF_ALL_CHARS = 10 #最大文字数
+NUM_OF_ABS_CHARS = 2 #欠損文字数
 
 def main():
     st = datetime.datetime.now()
@@ -48,6 +48,5 @@ def kaitou(seikai):
     return 1
 
 
-if __name__ == "__main__":
-    alphabets = 
+if __name__ == "__main__": 
     main()
