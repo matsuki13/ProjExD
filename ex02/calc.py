@@ -3,13 +3,14 @@ from tkinter import ttk
  
 # Define
 BUTTON = [
-    ['9', '8', '7'],
-    ['6', '5', '4'],
-    ['3', '2', '1'],
-    ['0', '+', '=']
+    ['', 'B', 'C', '/'],
+    ['9', '8', '7', '*'],
+    ['6', '5', '4', '-'],
+    ['3', '2', '1', '+'],
+    ['0', '00', '.', '=']
 ]
  
-SYMBOL = ['+']
+SYMBOL = ['+', '-', '*', '/']
  
 # 電卓を作ってみた！
 class CaluGui(object):
@@ -53,6 +54,11 @@ class CaluGui(object):
  
             res = '= ' + str(eval(self.calc_str)) # eval関数の利用
             self.ans_var.set(res)
+        elif check == 'C': # クリアの場合
+            self.calc_str = ''
+            self.ans_var.set('')
+        elif check == 'B': # バックの場合
+            self.calc_str = self.calc_str[:-1]
        
         elif check in SYMBOL: # 記号の場合
             if self.calc_str[-1:] not in SYMBOL and self.calc_str[-1:] != '':
