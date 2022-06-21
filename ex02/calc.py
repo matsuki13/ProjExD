@@ -23,13 +23,13 @@ class CaluGui(object):
         app.geometry('300x500') # Window のサイズ
  
         # Frame Setting
-        calc_frame = ttk.Frame(app, width=300, height=100) # 計算式と結果用のFrame
-        calc_frame.propagate(False) # サイズが固定される
-        calc_frame.pack(side=tk.TOP, padx=10, pady=20) # 余白の設定
-        button_frame = ttk.Frame(app, width=400, height=200) # 計算ボタン用のFrame
-        button_frame.propagate(False) # サイズが固定される
-        button_frame.pack(side=tk.BOTTOM) # 余白の設定
-        button_font = ("Times New Roman", 30)
+        calc_frame = ttk.Frame(app, width=300, height=100)      # 計算式と結果用のFrame
+        calc_frame.propagate(False)                             # サイズが固定される
+        calc_frame.pack(side=tk.TOP, padx=10, pady=20)          # 余白の設定
+        button_frame = ttk.Frame(app, width=400, height=200)    # 計算ボタン用のFrame
+        button_frame.propagate(False)                           # サイズが固定される
+        button_frame.pack(side=tk.BOTTOM)                       # 余白の設定
+        button_font = ("Times New Roman", 30)                   #フォントの設定
  
         # Parts Setting
         self.calc_var = tk.StringVar() # 計算式用の動的変数
