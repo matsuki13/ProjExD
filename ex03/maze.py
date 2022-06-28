@@ -10,7 +10,7 @@ def key_up(event):
     global key
     key = ""
 
-def main_proc():
+def main_proc(): #こうかとんの移動関連
     global cx, cy, mx, my, lst
     delta = { # キー：押されているキーkey/値：移動幅リスト[x,y]
         ""     :[0, 0],
@@ -24,8 +24,8 @@ def main_proc():
         my =  my+delta[key][1]
         cx, cy = (mx*100)+50, (my*100)+50
         canvas.coords("tori", cx, cy)
-    elif lst[mx][my] == 1:
-        pass  
+    elif lst[my][mx] == 1:
+        pass
 
          
     root.after(100, main_proc)
