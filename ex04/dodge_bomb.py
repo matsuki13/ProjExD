@@ -12,18 +12,18 @@ def main():
     screen_sfc.blit(bgimg_sfc, bgimg_rct)
 
     #練習３
-    kkimg_sfc = pg.image.load("fig/6.png")                  #Surface
-    kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)    #Surface
-    kkimg_rct = kkimg_sfc.get_rect()                        #Rect
-    kkimg_rct.center = 900, 400                             #Rect
+    kkimg_sfc = pg.image.load("fig/6.png")                  # Surface
+    kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)    # Surface
+    kkimg_rct = kkimg_sfc.get_rect()                        # Rect
+    kkimg_rct.center = 900, 400                             # Rect
 
     # 練習５
     bmimg_sfc = pg.Surface((20, 20))                           # Surface
-    bmimg_sfc.set_colorkey((0, 0, 0))
+    bmimg_sfc.set_colorkey((0, 0, 0))                          # Surface
     pg.draw.circle(bmimg_sfc, (255, 0, 255), (10, 10), 10)     #爆弾の色変更（追加）
-    bmimg_rct = bmimg_sfc.get_rect()
-    bmimg_rct.centerx = random.randint(0, screen_rct.width)
-    bmimg_rct.centery = random.randint(0, screen_rct.height)
+    bmimg_rct = bmimg_sfc.get_rect()                           # Rect
+    bmimg_rct.centerx = random.randint(0, screen_rct.width)    # Rect
+    bmimg_rct.centery = random.randint(0, screen_rct.height)   # Rect
     vx, vy = +2, +2                                            #爆弾の速度変更（追加）
 
    
