@@ -7,15 +7,15 @@ def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen_sfc = pg.display.set_mode((1600, 900)) # Surface
     screen_rct = screen_sfc.get_rect()            # Rect
-    bgimg_sfc = pg.image.load("fig/pg_bg.jpg")      # Surface
+    bgimg_sfc = pg.image.load("fig/pg_bg.jpg")    # Surface
     bgimg_rct = bgimg_sfc.get_rect()              # Rect
     screen_sfc.blit(bgimg_sfc, bgimg_rct)
 
     #練習３
-    kkimg_sfc = pg.image.load("fig/6.png")
-    kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)
-    kkimg_rct = kkimg_sfc.get_rect()
-    kkimg_rct.center = 900, 400
+    kkimg_sfc = pg.image.load("fig/6.png")                  #Surface
+    kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)    #Surface
+    kkimg_rct = kkimg_sfc.get_rect()                        #Rect
+    kkimg_rct.center = 900, 400                             #Rect
 
     # 練習５
     bmimg_sfc = pg.Surface((20, 20))                           # Surface
@@ -66,7 +66,7 @@ def main():
         bmimg_rct.centerx += 1
         bmimg_rct.centerx -= 1 
         screen_sfc.blit(bgimg_sfc, bgimg_rct)
-        bgimg_rct.move_ip(1, 1)   #背景移動（追加）#こうかとんと爆弾の移動履歴（追加）
+        bgimg_rct.move_ip(1, 1)                                         #背景移動（追加）#こうかとんと爆弾の移動履歴（追加）
 
         screen_sfc.blit(bmimg_sfc, bmimg_rct)
 
