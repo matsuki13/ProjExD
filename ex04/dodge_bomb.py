@@ -18,15 +18,15 @@ def main():
     kkimg_rct.center = 900, 400
 
     # 練習５
-    bmimg_sfc = pg.Surface((20, 20)) # Surface
+    bmimg_sfc = pg.Surface((20, 20))                           # Surface
     bmimg_sfc.set_colorkey((0, 0, 0))
-    pg.draw.circle(bmimg_sfc, (255, 0, 0), (10, 10), 10)
+    pg.draw.circle(bmimg_sfc, (255, 0, 255), (10, 10), 10)     #爆弾の色変更（追加）
     bmimg_rct = bmimg_sfc.get_rect()
     bmimg_rct.centerx = random.randint(0, screen_rct.width)
     bmimg_rct.centery = random.randint(0, screen_rct.height)
-    vx, vy = +1, +1
+    vx, vy = +2, +2                                            #爆弾の速度変更（追加）
 
-    
+   
 
     while True:
         screen_sfc.blit(bgimg_sfc, bgimg_rct)
@@ -40,37 +40,43 @@ def main():
         key_states = pg.key.get_pressed()
         # 
         if key_states[pg.K_UP]    == True: 
-            kkimg_rct.centery -= 1
+            kkimg_rct.centery -= 3
             if check_bound(kkimg_rct, screen_rct)[1]==-1:
-                kkimg_rct.centery += 1
+                kkimg_rct.centery += 3
         if key_states[pg.K_DOWN]  == True:
-             kkimg_rct.centery += 1
+             kkimg_rct.centery += 3
              if check_bound(kkimg_rct, screen_rct)[1]==-1:
-                kkimg_rct.centery -= 1
+                kkimg_rct.centery -= 3
         
 
         if key_states[pg.K_LEFT]  == True:
-            kkimg_rct.centerx -= 1
+            kkimg_rct.centerx -= 3
             print(kkimg_rct.left)
             print(check_bound(kkimg_rct, screen_rct))
             if check_bound(kkimg_rct, screen_rct)[0]==-1:
-                kkimg_rct.centerx += 1
+                kkimg_rct.centerx += 3
         if key_states[pg.K_RIGHT] == True:
-             kkimg_rct.centerx += 1 
+             kkimg_rct.centerx += 3 
              if check_bound(kkimg_rct, screen_rct)[0]==-1:
-                kkimg_rct.centerx -= 1
+                kkimg_rct.centerx -= 3                                  #こうかとんの移動距離変更（追加）
         # 練習７
         # if check_bound(bmimg_rct, screen_rct) != (1, 1):
         bmimg_rct.centery += 1
         bmimg_rct.centery -= 1
         bmimg_rct.centerx += 1
         bmimg_rct.centerx -= 1 
+        screen_sfc.blit(bgimg_sfc, bgimg_rct)
+        bgimg_rct.move_ip(1, 1)   #背景移動（追加）#こうかとんと爆弾の移動履歴（追加）
+
         screen_sfc.blit(bmimg_sfc, bmimg_rct)
 
-
+       
 
         # 練習６
+
+
         bmimg_rct.move_ip(vx, vy)
+       
         
         # 練習５
         screen_sfc.blit(kkimg_sfc, kkimg_rct)
@@ -84,6 +90,7 @@ def main():
         if kkimg_rct.colliderect(bmimg_rct):
             return
 
+       
         pg.display.update()
         clock.tick(1000)
     
