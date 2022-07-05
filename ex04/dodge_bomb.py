@@ -95,6 +95,11 @@ def main():
         clock.tick(1000)
     
 def check_bound(rct, screen):
+    '''
+    [1] rct: こうかとん or 爆弾のRect
+    [2] scr_rct: スクリーンのRect
+    '''
+
     yoko, tate = 1, 1
     if rct.left < screen.left or rct.right > screen.right:
         yoko = -1
